@@ -3,12 +3,14 @@ body {
     font-family: sans-serif;
     padding: 20px;
   }
+  
   h1 {
     font-size: 40px;
     margin-top: 0;
+    margin-bottom: 15px;
   }
   
-h2 {
+  h2 {
     font-size: 30px;
   }
   
@@ -28,7 +30,12 @@ h2 {
     padding: 20px;
     max-width: 500px;
   }
-  
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:-25px;
+  }
   hr {
     height: 2px;
     background-color: brown;
@@ -57,13 +64,17 @@ h2 {
   
   .price {
     text-align: right;
-    width: 25%
+    width: 25%;
   }
   
   /* FOOTER */
   
   footer {
     font-size: 14px;
+  }
+  
+  .address {
+    margin-bottom: 5px;
   }
   
   a {
@@ -80,4 +91,4 @@ h2 {
   
   a:active {
     color: brown;
-  }  
+  }
