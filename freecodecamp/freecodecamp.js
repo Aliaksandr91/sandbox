@@ -11,12 +11,12 @@ console.log(innerHtml);
 //Catch Use of Assignment Operator Instead of Equality Operator
 let x = 7;
 let y = 9;
-let result = "to come";
+let res = "to come";
 
 if (x == y) {
-  result = "Equal!";
+  res = "Equal!";
 } else {
-  result = "Not equal!";
+  res = "Not equal!";
 }
 
 console.log(result);
