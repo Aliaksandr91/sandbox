@@ -1,0 +1,18 @@
+<script>
+    class Sejf {
+        #kwota
+        constructor() {
+            this.#kwota = Math.floor((Math.random() * 100) + 1)
+        }
+        getKwota(kod) {
+            if (kod == 5566) {
+                console.log(this.#kwota)
+            } else {
+                console.log('blad')
+            }
+        }
+    }
+    let sejf = new Sejf();
+    sejf.getKwota(5566)
+    //console.log(sejf)
+</script>

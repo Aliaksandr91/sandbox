@@ -1,0 +1,56 @@
+<script>
+// ❑  Zaprojektuj program, który będzie losował liczby (1-10) wraz z działaniem (dodawanie,
+// odejmowanie i mnożenie) i pytał użytkownika jaki jest to wynik np.:
+
+// Ile to jest: 2 * 2 ?
+// Ile to jest: 9 – 4 ?
+// Ile to jest: 3 * 9 ?
+
+// ...
+
+// ❑ Takich pytań powinno być 10.
+// ❑ Program po 10 pytaniach prezentuje statystyki odpowiedzi to znaczy na ile pytań
+// odpowiedziano poprawnie, a na ile błędnie.
+
+    function getRnd(max) {
+        return Math.floor((Math.random() * max) + 1)
+    }
+
+    var res;
+    var count = 0;
+    var num1 = getRnd(10);
+    var num2 = getRnd(10);
+    var answTrue = 0;
+    var answFalse = 0;
+
+    while (true) {
+        var numOfOp = getRnd(3)
+
+        if (numOfOp == 1) {
+            res = `${num1 + num2}`;
+            answ = Number(prompt(`Ile to jest: ${num1} + ${num2}`));
+        } else if (numOfOp == 2) {
+            res = `${num1 - num2}`;
+            answ = Number(prompt(`Ile to jest: ${num1} - ${num2}`));
+        } else if (numOfOp == 3) {
+            res = `${num1 * num2}`;
+            answ = Number(prompt(`Ile to jest: ${num1} * ${num2}`));
+        }
+
+        if (res == answ) {
+            num1 = getRnd(10);
+            num2 = getRnd(10);
+            answTrue++;
+            count++;
+        } else {
+            num1 = getRnd(10);
+            num2 = getRnd(10);
+            count++;
+            answFalse++;
+        }
+        if (count == 10) {
+            console.log('true ' + answTrue, 'false ' + answFalse)
+            break
+        }
+    }
+</script>

@@ -1,0 +1,18 @@
+<script>
+    // Napisz program, który liczy pole jakiejś figury ?
+    var dl1 = 0;
+    var dl2 = 0;
+    var pole = 0;
+    var figura = Number(prompt("Jaka figura ? 1 – prostokąt, 2 – trójkąt"));
+    if (figura == 2) {
+        dl1 = Number(prompt("Podaj długość podstawy:"));
+        dl2 = Number(prompt("Podaj wysokość trójkąta:"));
+        pole = 0.5 * dl1 * dl2;
+        console.log(`Pole trójkąta to: ${pole}`)
+    } else {
+        dl1 = Number(prompt("Podaj długość boku a::"));
+        dl2 = Number(prompt("Podaj długość boku b:"));
+        pole = dl1 * dl2;
+        console.log(`Pole prostokąta to: ${pole}`)
+    }
+</script>

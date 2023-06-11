@@ -1,0 +1,78 @@
+<script>
+    class Pracownik {
+
+        constructor(imie, nazwisko, email, telefon) {
+            this.imie = imie
+            this.nazwisko = nazwisko
+            this.email = email
+            this.telefon = telefon
+        }
+    }
+
+    let listaPracownikow = [];
+
+    while (true) {
+
+        let menu = Number(prompt("1-dodaj, 2-pokaz, 3-usun, 4-zmien, 5-koniec"))
+
+        if (menu == 1) {
+            let imie = prompt("Podaj imie: ");
+            let nazwisko = prompt("Podaj nazwisko: ");
+            let email = prompt("Podaj email: ");
+            let telefon = prompt("Podaj telefon: ");
+            let pracownik = new Pracownik(imie, nazwisko, email, telefon);
+            listaPracownikow.push(pracownik);
+        }
+        else if (menu == 2) {
+            for (let item of listaPracownikow) {
+                console.log(item.imie, item.nazwisko, item.email, item.telefon);
+                //console.log(item)
+            }
+        }
+        else if (menu == 3) {
+            let nazwisko = prompt("Podaj nazwisko: ")
+            let flag = false;
+            for (i = 0; i < listaPracownikow.length; i++) {
+                //if (listaPracownikow[i].nazwisko.indexOf(nazwisko) > -1) {
+                if (listaPracownikow[i].nazwisko == nazwisko) {
+                    flag = true;
+                    listaPracownikow.splice(i, 1);
+                    console.log('Pracownik zostal usuniety')
+                    break
+                }
+            }
+            if (flag == false) {
+                console.log('Pracownik nie zostal znaleziony')
+            }
+        }
+        else if (menu == 4) {
+
+            for (let item of listaPracownikow) {
+                if (item.nazwisko == nazwisko) {
+                    let menu = Number(prompt("Co chcesz zmienić ( 1 - imie, 2 - nazwisko, 3 - email, 4 - telefon) ?"));
+                    if (menu == 1) {
+                        let noweImie = prompt("Podaj nowe imie: ");
+                        item.imie = noweImie;
+                    } else if (menu == 2) {
+                        let nazwisko = prompt("Podaj nazwisko: ");
+                        item.nazwisko = noweNazwisko;
+                        item.email = nowyEmail;
+                    } else if (menu == 3) {
+                        let nowyEmail = prompt("Podaj nowy email: ");
+                    } else if (menu ==4) {
+                        let nowyTelefon = prompt("Podaj nowy telefon: ");
+                        item.telefon = nowyTelefon;
+                    }
+                    console.log('Obiekt zmieniono')
+                    break
+                }
+            }
+        }
+        else if (menu == 5) {
+            break;
+        }
+        else {
+            console.log("Nierozpoznana opcja menu");
+        }
+    }
+</script>

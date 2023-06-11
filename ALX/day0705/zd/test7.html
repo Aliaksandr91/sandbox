@@ -1,0 +1,130 @@
+<script>
+    //     Zaprojektuj system dla NFZ.
+    // ❑ System ma za zadanie zbierać dla każdej przychodni informacje o swoich
+    // pacjentach oraz ich chorobach.
+
+    // ❑ Przychodnia zawiera informacje takie jak:
+    // ❑ nazwa, miasto, lista pacjentów
+    // ❑ Pacjent zawiera takie informacje jak:
+    // ❑ imię, nazwisko, choroby
+    // ❑ Zaprojektuj menu:
+    // ❑ 1 – Przychodnia, 2 – Pacjent, 3 – Koniec
+    // ❑ W opcji – 1:
+    // 1 – dodaj przychodnię, 2 - dodaj pacjenta, 3 - lista przychodni, 4 - lista pacjentów w przychodni
+    // ❑ W opcji – 2:
+    // 1 – doda chorobę, 2 - lista chorób pacjenta
+
+    class Przychodnia {
+
+        constructor(nazwa, miasto) {
+            this.nazwa = nazwa;
+            this.miasto = miasto;
+            this.listaPacjentów = [];
+        }
+
+    }
+
+    class Pacjent {
+
+        constructor(imie, nazwisko) {
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+            this.choroby = [];
+        }
+    }
+
+    let listaPrzychodni = [];
+
+
+    while (true) {
+
+        let menu = Number(prompt("1 – Przychodnia, 2 – Pacjent, 3 – Koniec"));
+
+        if (menu == 1) {
+            let menu = Number(prompt("1 – dodaj przychodnię, 2 - dodaj pacjenta, 3 - lista przychodni, 4 - lista pacjentów w przychodni"));
+            if (menu == 1) {
+                let nazwa = prompt("Podaj nazwe przychodni: ");
+                let miasto = prompt("Podaj miasto przychodni: ");
+                let przychodnia = new Przychodnia(nazwa, miasto);
+                listaPrzychodni.push(przychodnia);
+            } else if (menu == 2) {
+                let nazwa = prompt("Podaj nazwe przychodni: ");
+                let miasto = prompt("Podaj miasto przychodni: ");
+                let imie = prompt("Podaj imie pacjenta: ");
+                let nazwisko = prompt("Podaj nazwisko pacjenta: ");
+                let pacjent = new Pacjent(imie, nazwisko);
+                let flag = false;
+                for (let item of listaPrzychodni) {
+                    if (item.nazwa === nazwa && item.miasto == miasto) {
+                        item.listaPacjentów.push(pacjent)
+                        flag = true;
+                        console.log('Pacjent zostal dodany do przychodni')
+                    }
+                    if (flag == false) {
+                        console.log('Przychodnia nie zostal znaleziona')
+                    }
+                }
+            } else if (menu == 3) {
+                for (let item of listaPrzychodni) {
+                    console.log(`Nazwa: ${item.nazwa} miasto: ${item.miasto}`);
+                }
+            } else if (menu == 4) {
+                let nazwa = prompt("Podaj nazwe przychodni: ");
+                let miasto = prompt("Podaj miasto przychodni: ");
+                for (let item of listaPrzychodni) {
+                    if (item.nazwa == nazwa && item.miasto == miasto) {
+                        for (let pacjent of item.listaPacjentów) {
+                            console.log(nazwa, pacjent.imie, pacjent.nazwisko)
+                        }
+                    }
+                }
+            }
+        }
+
+        else if (menu == 2) {
+            let menu = Number(prompt("1 - dodaj chorobę, 2 - lista chorób pacjenta"));
+            if (menu == 1) {
+                let nazwa = prompt("Podaj nazwe przychodni: ");
+                let miasto = prompt("Podaj miasto przychodni: ");
+                let imie = prompt("Podaj imie pacjenta: ");
+                let nazwisko = prompt("Podaj nazwisko pacjenta: ");
+                let choroba = prompt("Podaj chorobe: ");
+
+                for (let item of listaPrzychodni) {
+                    if (item.nazwa == nazwa && item.miasto == miasto) {
+                        for (pacjent of item.listaPacjentów) {
+                            if (pacjent.imie == imie && pacjent.nazwisko == nazwisko) {
+                                pacjent.choroby.push(choroba)
+                            }
+                        }
+                    }
+                }
+
+
+            }
+            else if (menu == 2) {
+                let nazwa = prompt("Podaj nazwe przychodni: ");
+                let miasto = prompt("Podaj miasto przychodni: ");
+                let imie = prompt("Podaj imie pacjenta: ");
+                let nazwisko = prompt("Podaj nazwisko pacjenta: ");
+
+                for (let item of listaPrzychodni) {
+                    if (item.nazwa == nazwa && item.miasto == miasto) {
+                        for (pacjent of item.listaPacjentów) {
+                            if (pacjent.imie == imie && pacjent.nazwisko == nazwisko) {
+                                for (let chor of pacjent.choroby) {
+                                    console.log('Choroby: ' + chor)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else if (menu == 3) {
+            console.log("KONIEC !");
+            break;
+        }
+    }
+
+</script>

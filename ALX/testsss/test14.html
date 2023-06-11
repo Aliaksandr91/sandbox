@@ -1,0 +1,37 @@
+<script>
+//     ❑ Zaprojektuj program, który będzie losował liczby (1-10) pytał użytkownika jaki jest wynik
+// mnożenia np.:
+
+// Ile to jest: 2 * 2 ?
+// Ile to jest: 9 * 4 ?
+// Ile to jest: 3 * 9 ?
+
+// ...
+
+// ❑ Pytań powinno być 5.
+// ❑ Kiedy użytkownik odpowie poprawnie, otrzymuje kolejne pytanie.
+// ❑ Kiedy użytkownik odpowie źle program pyta ponownie o to samo.
+    function getRnd() {
+        return Math.floor((Math.random() * 10) + 1)
+    }
+
+    var res;
+    var count = 0;
+    var num1 = getRnd();
+    var num2 = getRnd();
+
+    while (true) {
+        res = num1 * num2;
+        answ = Number(prompt(`Ile to jest: ${num1} * ${num2}`));
+        if (res == answ) {
+            num1 = getRnd();
+            num2 = getRnd();
+            count++;
+        } else {
+            answ;
+        }
+        if (count == 5) {
+            break
+        }
+    }
+</script>

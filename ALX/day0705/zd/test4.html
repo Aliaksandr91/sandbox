@@ -1,0 +1,55 @@
+<script>
+    //     Ćwiczenie 26_5a
+    // ❑ Uzytkownik podaje dowolną ilość liczba całkowitych – 0 koniec
+    // ❑ Program ma za zadanie zliczyć jakie podał liczby i ile ich było np.:
+
+    // 2,4,6,2,8,7,4
+
+    // 2 – wystepuje 2x
+    // 4 – wystepuje 2x
+    // 6 – wystepuje 1x
+    // 8 – wystepuje 1x
+    // 7 – wystepuje 1x
+
+    function getArr(array) {
+        let nums = [];
+
+        for (let i = 0; i < array.length; i++) {
+            let count = 0;
+            for (let j = i + 1; j < array.length; j++) {
+                if (array[j] === array[i]) {
+                    count++;
+                }
+            }
+            if (count == 0) {
+                nums.push(array[i]);
+            }
+        }
+        return nums;
+    }
+
+    let arr = [];
+    
+    while (true) {
+        let num = Number(prompt("Podaj liczbę, 0-koniec"));
+        if (num == 0) {
+            let numsArr = getArr(arr);
+            
+            for (let i = 0; i < numsArr.length; i++) {
+                let number = numsArr[i];
+                let count = 0;
+                for (let j = 0; j < arr.length; j++) {
+                    if (arr[j] === number) {
+                        count++;
+                    } 
+                }
+                console.log(number + " - wystepuje " + count + "x");
+            }
+            //console.log(numsArr)
+            break
+        } else if (num !== 0) {
+            arr.push(num)
+        }
+        //console.log(arr)
+    }
+</script>

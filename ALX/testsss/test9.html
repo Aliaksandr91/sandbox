@@ -1,0 +1,50 @@
+<script>
+// Gra w "Za dużo, za mało". Komputer losuje liczbę z przedziału
+// 1 – 100.
+// ❑ Gracz ma za zadanie odgadnąć, co to za liczba poprzez
+// podawanie kolejnych wartości.
+// ❑ Jeżeli podana liczba jest:
+// ❑ Większa od wylosowanej - wyświetlany jest komunikat "podałeś za dużą
+// liczbę"
+// ❑ Mniejsza od wylosowanej – wyświetlony jest komunikat "podałeś za małą
+// liczbę"
+// ❑ Równą wylosowanej – wyświetlony jest komunikat "Gratulacje" i gra
+// zostaje zakończona
+
+// 1. 5 prób na odgadnięcie liczby, jeżeli w 5-ciu próbach nie odgadniemy to gra się kończy z komunikatem - PRZEGRALES
+// 2. Jeżeli gracz wygra albo przegra to program powinien zapytać "Czy chcesz zagrać jeszcze raz T/N ?". 
+// Jeżeli wybierzemy literę "T" to gra się zaczyna od początku z nowo wylosowaną liczbą, 
+// jeżeli kliknie "N" to gra ostatecznie się wyłącza.
+
+    var numRnd = Math.floor((Math.random() * 100) + 1);
+    var count = 0;
+    var answ = 'T';
+    
+    while (true) {
+
+        if (answ == 'T') {
+            var numUsr = Number(prompt('Podaj liczbę'));
+            count++;
+        } else {
+            break
+        }
+
+        if (count == 5) {
+            console.log('PRZEGRALES');
+            count = 0;
+            answ = prompt('Czy chcesz zagrać jeszcze raz T/N ?');
+        }
+
+        if (numUsr > numRnd) {
+            console.log('Podałeś za dużą');
+        }
+        else if (numUsr < numRnd) {
+            console.log('Podałeś za małą');
+        } else {
+            console.log('Gratulacje');
+            count = 0;
+            numRnd = Math.floor((Math.random() * 100) + 1);
+            answ = prompt('Czy chcesz zagrać jeszcze raz T/N ?');
+        }
+    }
+</script>

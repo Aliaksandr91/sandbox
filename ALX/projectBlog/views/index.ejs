@@ -1,0 +1,20 @@
+<%- include('naglowek') %>
+
+
+
+    <% dane.forEach((value, index)=> { %>
+        <p>
+            <b>Tytył</b><br />
+            <%= value.tytul %> <br />
+                <b>Treść</b><br />
+                <%= value.tresc %> <br />
+
+                <p>
+                    <a href="/usun/<%= index %>">usun</a>
+                    <a href="/edytuj/<%= index %>">edytuj</a>
+                </p>
+        </p>
+    <%}) %>
+   
+
+    <%- include('stopka') %>

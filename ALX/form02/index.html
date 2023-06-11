@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>formularz rejestracyjny</title>
+</head>
+<body>
+    <h1>Dopisanie zgłoszenia reklamacyjnego</h1>
+    <form method="post">
+        <div class="card green">
+            <h2>Reklamujący</h2>
+            <div class="layout">
+                <p class="sex">
+                    Pani<input type="radio" name="sex" value="woman">
+                    Pan<input type="radio" name="sex" value="man">
+                </p>
+
+                <p>
+                    <span class="description">Imię</span>
+                    <input class="data" type="text">
+                </p>
+                <p>
+                    <span class="description">Nazwisko</span>
+                    <input class="data" type="text">
+                </p>
+                <p>
+                    <span class="description">Ulica</span>
+                    <input class="data" type="text">
+                </p>
+                <p>
+                    <span class="description">Kod pocztowy</span>
+                    <input class="data-index" type="text">
+                </p>
+                <p>
+                    <span class="description">Miejscowość</span>
+                    <input class="data" type="text">
+                </p>
+                <p>
+                    <span class="description">Nr telefonu</span>
+                    <input class="data" type="text">
+                </p>
+                <p>
+                    <span class="description">Adres email</span>
+                    <input class="data" type="text">
+                </p>
+                <p>
+                    Sposób powiadomienia 
+                    <input type="checkbox" name="phone" value="phone">Telefon/SMS
+                    <input type="checkbox" name="mail" value="mail">e-mail
+                </p>
+            </div>
+
+        </div>
+        <div class="card gray">
+            <h2>Reklamowany produkt</h2>
+            <div class="layout">
+                <p>
+                    <span class="description">Asortyment</span>
+                    <select class="data-select">
+                        <option value=""></option>
+                    </select>
+                </p>
+                <p>
+                    <span class="description">Numer seryjny</span>
+                    <input class="data" type="text">
+                </p>
+                <p>
+                    <span class="description">Uwagi</span>
+                    <input class="data-attention" type="text">
+                </p>
+            </div>
+
+        </div>
+        <div class="card blue">
+            <h2>Dane zgłoszenia</h2>
+            <div class="layout">
+                <p>
+                    <span class="description">Numer dokumentu zakupu</span>
+                    <input class="data-doc" type="text">
+                </p>
+                <p>
+                    <span class="description">Data zakupu</span>
+                    <input class="data-date" type="text">
+                </p>
+                <p>
+                    <span class="description">Data powstania wady</span>
+                    <input class="data-date" type="text">
+                </p>
+                <p>
+                    <span class="description">Przyczyna reklamacji</span>
+                    <input class="data-attention" type="text">
+                </p>
+                <p>
+                    <span class="description">Opis wady</span>
+                    <textarea class="data-area" cols="30" rows="10"></textarea>
+                </p>
+                <p>
+                    <span class="description">Żądanie reklamującego</span>
+                    <select class="data-select">
+                        <option value=""></option>
+                    </select>
+                </p>
+            </div>
+            
+        </div>
+    </form>
+</body>
+</html>

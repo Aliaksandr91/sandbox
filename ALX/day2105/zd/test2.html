@@ -1,0 +1,64 @@
+<script>
+    //     Ćwiczenie J30-1v2
+    // ❑ Utwórz zestaw klas zgodnie z poniższym drzewem hierarchii.
+    // ❑ Uwzględnij elementy dziedziczenia.
+    // ❑ Przypisz poniższe pola odpowiednim klasom:
+    // ❑ Pojazd: waga, mocSilnika, kolor, liczbaPasazerow, cena
+    // ❑ PojazdKolowy: liczbaKol
+    // ❑ Lodz: zanurzenie
+    // ❑ Samolot: pulap,
+    // ❑ Samochod: typFelg,
+    // ❑ Motocykl: bagaznikNaKask.
+    // ❑ Utwórz obiekt klasy Samochod.
+    class Pojazd {
+        constructor(waga, mocSilnika, kolor, liczbaPasazerow, cena) {
+            this.waga = waga;
+            this.mocSilnika = mocSilnika;
+            this.kolor = kolor;
+            this.liczbaPasazerow = liczbaPasazerow;
+            this.cena = cena;
+        }
+    }
+
+    class PojazdKolowy extends Pojazd {
+        constructor(waga, mocSilnika, kolor, liczbaPasazerow, cena, liczbaKol) {
+            super(waga, mocSilnika, kolor, liczbaPasazerow, cena)
+            this.liczbaKol = liczbaKol;
+        }
+    }
+
+    class Lodz extends Pojazd {
+
+        constructor(waga, mocSilnika, kolor, liczbaPasazerow, cena, zanurzenie) {
+            super(waga, mocSilnika, kolor, liczbaPasazerow, cena);
+            this.zanurzenie = zanurzenie;
+        }
+    }
+
+    class Samolot extends Pojazd {
+
+        constructor(waga, mocSilnika, kolor, liczbaPasazerow, cena, pulap) {
+            super(waga, mocSilnika, kolor, liczbaPasazerow, cena);
+            this.pulap = pulap;
+        }
+    }
+
+    class Samochod extends PojazdKolowy {
+
+        constructor(waga, mocSilnika, kolor, liczbaPasazerow, cena, liczbaKol, typFelg) {
+            super(waga, mocSilnika, kolor, liczbaPasazerow, cena, liczbaKol);
+            this.typFelg = typFelg;
+        }
+    }
+
+    class Motocykl extends PojazdKolowy {
+
+        constructor(waga, mocSilnika, kolor, liczbaPasazerow, cena, liczbaKol, bagaznikNaKask) {
+            super(waga, mocSilnika, kolor, liczbaPasazerow, cena, liczbaKol);
+            this.bagaznikNaKask = bagaznikNaKask;
+        }
+    }
+
+    let obj = new Samochod(1580, 2.5, "czarny", 5, 25000, 4, 'Aluminiowe');
+    console.log(obj);
+</script>

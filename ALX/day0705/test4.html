@@ -1,0 +1,13 @@
+<script>
+    let tab1 = [1, 2, 3, 4, 5, 6];
+    let tab2 = [9, 8, 5, 11, 4, 77, 9, 1]; //1, 4, 5
+    let res = [];
+    for (let item of tab1) {
+       for (let z of tab2) {
+        if (z === item) {
+            res.push(z)
+        }
+       }
+    }
+    console.log(res)
+</script>

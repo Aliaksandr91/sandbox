@@ -1,0 +1,14 @@
+.description {
+    display: inline-block;
+    width: 15vmin;
+}
+.data {
+    width: 20vmin;
+}
+.info-block {
+    display: inline-block;
+}
+.border {
+    width: 45vmin;
+    border-top: 1px solid #000;
+}

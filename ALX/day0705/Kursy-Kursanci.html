@@ -1,0 +1,111 @@
+<script>
+    class Kurs {
+
+        constructor(nazwa) {
+            this.nazwa = nazwa;
+            this.listaKursantow = [];
+        }
+
+    }
+
+    class Kursant {
+
+        constructor(imie, nazwisko) {
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+        }
+    }
+
+    let listaKursow = [];
+    while (true) {
+
+        let menu = Number(prompt("1-dodaj kurs, 2-pokaz kursy, 3-usun kurs, 4-dodaj kursanta do kursu, 5-wyswietl kurs wraz z kursantami, 6-usun kursanta z kursu, 7-koniec"));
+
+        if (menu == 1) {
+            let nazwa = prompt("Podaj nazwe kursu: ");
+            let kurs = new Kurs(nazwa);
+            listaKursow.push(kurs);
+        }
+        else if (menu == 2) {
+            //WZOR:
+            //Nazwa: ....
+            //Nazwa: ....
+            //Nazwa: ....
+            for (let item of listaKursow) {
+                console.log(`Nazwa: ${item.nazwa}`);
+            }
+        }
+        else if (menu == 3) {
+            let nazwa = prompt("Podaj nazwe kursu: ");
+            let flag = false;
+            for (i = 0; i < listaKursow.length; i++) {
+                if (listaKursow[i].nazwa == nazwa && listaKursow[i].listaKursantow.length == 0) {
+                    flag = true;
+                    listaKursow.splice(i, 1);
+                    console.log('Kurs zostal usuniety')
+                    break
+                } 
+            }
+            if (flag == false) {
+                console.log('Kurs nie zostal znaleziony lub ma kursantow')
+            }
+        }
+
+        else if (menu == 4) {
+            let nazwa = prompt("Podaj nazwe kursu: ");
+            let imie = prompt("Podaj imie kursanta: ");
+            let nazwisko = prompt("Podaj nazwisko kursanta: ");
+            let kursant = new Kursant(imie, nazwisko);
+            for (let item of listaKursow) {
+                if (item.nazwa === nazwa) {
+                    if (item.listaKursantow.length < 5) {
+                        item.listaKursantow.push(kursant)
+                    } else {
+                        console.log('Niestety nie ma miejsca')
+                    }
+                   
+                }
+            }
+        }
+
+        else if (menu == 5) {
+            //WZOR:
+            //Nazwa: ....
+            //Imię: .... Nazwisko: ....
+            //Imię: .... Nazwisko: ....
+            //Imię: .... Nazwisko: ....
+            let nazwa = prompt("Podaj nazwe kursu: ");
+            for (let item of listaKursow) {
+                if (item.nazwa == nazwa) {
+                    for (let kursant of item.listaKursantow) {
+                        console.log(nazwa, kursant.imie, kursant.nazwisko)
+                    }
+                }
+            }
+        }
+
+        else if (menu == 6) {
+            let nazwa = prompt("Podaj nazwe kursu: ");
+            let nazwisko = prompt("Podaj nazwisko kursanta: ");
+            let flag = false;
+
+            for (let item of listaKursow) {
+                if (item.nazwa == nazwa) {
+                    for (let kursantInd in item.listaKursantow) {
+                        if (item.listaKursantow[kursantInd].nazwisko == nazwisko) {
+                            flag = true;
+                            item.listaKursantow.splice(kursantInd, 1);
+                            console.log('Kursant zostal usuniety')
+                            break
+                        }
+                    }
+                }
+            }
+        }
+
+        else if (menu == 7) {
+            console.log("KONIEC !");
+            break;
+        }
+    }
+</script>

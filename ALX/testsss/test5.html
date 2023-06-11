@@ -1,0 +1,15 @@
+<script>
+    var num = Number(prompt("Add number"));
+    var max = num;
+    var min = num;
+    for(var i = 2; i <= 10; i++) {
+        num = Number(prompt("Add number"));
+        if (num < min) {
+            min = num
+        } else if (num > max ) {
+            max = num
+        }
+    }
+    console.log(max, min)
+
+</script>

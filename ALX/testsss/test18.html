@@ -1,0 +1,14 @@
+<script>
+    //Napisz program, który liczy pole albo obwód prostokąta.
+    var bok1 = Number(prompt("Ile wynosi pierwszy bok prostokąta"));
+    var bok2 = Number(prompt("Ile wynosi drugi bok prostokąta"));
+    var op = Number(prompt("Co chcesz policzyć ? 1 – pole, 2 – obwód"));
+    res = 0;
+    if (op == 1) {
+        res = bok1 * bok2;
+        console.log(`pole = ${res}`)
+    } else {
+        res = 2 * (bok1 + bok2);
+        console.log(`obwód = ${res}`)
+    }
+</script>

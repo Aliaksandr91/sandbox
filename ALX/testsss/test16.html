@@ -1,0 +1,26 @@
+<script>
+//      Napisz funkcję, której dwa pierwsze parametry będą określały
+// wartości liczbowe, a trzeci — rodzaj wykonywanego działania.
+//      W zależności od stanu trzeciego parametru, funkcja ma wyświetlić
+// sumę, różnicę, iloczyn, iloraz lub resztę z dzielenia pierwszego i drugiego
+// parametru.
+
+    function func(a, b, c) {
+        var res = 0;
+        if (c == '+') {
+            res = a + b
+        } else if (c == '-') {
+            res = a - b
+        } else if (c == '*') {
+            res = a * b
+        } else if (c == '/') {
+            res = a % b
+        }
+        return res
+    }
+    var d = func(1, 2, '+')
+    var e = func(1, 2, '-')
+    var f = func(1, 2, '*')
+    var g = func(1, 2, '/')
+    console.log(d,e,f,g)
+</script>

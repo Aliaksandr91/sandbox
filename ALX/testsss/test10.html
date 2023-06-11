@@ -1,0 +1,36 @@
+<script>
+    var sum = 0;
+    var count = 0;
+    var countParz = 0;
+    var countNieparz = 0;
+    var max;
+    var min;
+    while (true) {
+        num = Number(prompt("Add number"));
+        count++
+        sum = sum + num
+        if (num % 2 == 0) {
+            countParz++
+        }
+        if (num % 2 !== 0) {
+            countNieparz++
+        }
+        if (num == 0) {
+            break
+        }
+
+        if (count == 1) {
+            max = num;
+            min = num;
+        }
+        if (num < min) {
+            min = num
+        } else if (num > max) {
+            max = num
+        }
+    }
+    console.log(`suma =${sum}, srednia = ${sum / (count - 1)}`);
+    console.log(`ilosc =${count}`)
+    console.log(`parzysty = ${countParz} nieparzysty = ${countNieparz}`);
+    console.log(`min = ${min} max = ${max}`);
+</script>

@@ -1,0 +1,38 @@
+<script>
+    //     Ćwiczenie 26-9
+    // ❑ Utwórz pustą tablicę.
+    // ❑ Zapełnij je pętlą 10-cio losowo wybranymi liczbami z zakresu 1 – 100.
+    // ❑ Napisz algorytm, który znajdzie najmniejszą i największą liczbę -
+    // (drugą pętlę).
+
+
+    let arr = [];
+    let min;
+    let max;
+
+    function getRnd() {
+        return Math.floor((Math.random() * 100) + 1)
+    }
+
+    if (arr.length < 10) {
+        for (let i = 0; i < 10; i++) {
+            arr.push(getRnd());
+        }
+    }
+
+    if (arr.length >= 10){
+        min = arr[0]
+        max = arr[0]
+        for (num of arr) {
+            if (num < min) {
+                min = num
+            }
+            if (num > max) {
+                max = num
+            }
+        }
+    }
+
+    console.log(arr)
+    console.log(min, max)
+</script>

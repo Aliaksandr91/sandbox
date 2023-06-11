@@ -1,0 +1,78 @@
+<script>
+    class Uczen {
+
+        constructor(imie, nazwisko) {
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+            this.oceny = new Map();
+        }
+
+    }
+
+
+    let listaStudentow = [];
+    while (true) {
+
+        let menu = Number(prompt("1-dodaj studenta, 2-wypisz studentow, 3-dodaj ocene studentowi, 4-wypisz studentow wraz ze srednia, 5-koniec"));
+
+        if (menu == 1) {
+            let imie = prompt("Podaj imie:");
+            let nazwisko = prompt("Podaj nazwisko:");
+            let uczen = new Uczen(imie, nazwisko);
+            listaStudentow.push(uczen);
+        }
+        else if (menu == 2) {
+            for (let item of listaStudentow) {
+                console.log(`${item.imie} ${item.nazwisko}`);
+            }
+        }
+        else if (menu == 3) {
+            let nazwisko = prompt("Podaj nazwisko:");
+            let przedmiot = prompt("Podaj przedmiot:");
+            let ocena = Number(prompt("Podaj ocenę:"));
+
+            let flag = false;
+            for (item of listaStudentow) {
+                if (item.nazwisko == nazwisko) {
+                    flag = true;
+                    if (item.oceny.has(przedmiot) == false) {
+                        item.oceny.set(przedmiot, [ocena])
+                    } else {
+                        item.oceny.get(przedmiot).push(ocena)
+                    }
+                    console.log('Ocene dodano')
+                    break
+                }
+            }
+            if (flag == false) {
+                console.log('Student nie zostal znaleziony')
+            }
+
+        }
+        else if (menu == 4) {
+            for (let x of listaStudentow) {
+
+                console.log(`Imię: ${x.imie} Nazwisko: ${x.nazwisko}`);
+                for (let y of x.oceny.keys()) {
+
+                    console.log(`Przedmiot: ${y}`);
+
+                    let suma = 0;
+                    for (let z of x.oceny.get(y)) {
+                        suma += z;
+                    }
+
+                    let srednia = suma / x.oceny.get(y).length;
+                    console.log(`Srednia: ${srednia}`);
+                }
+
+            }
+            //Imię: .... Nazwisko: .... Srednia: ....
+            //Imię: .... Nazwisko: .... Srednia: ....
+            //Imię: .... Nazwisko: .... Srednia: ....
+        }
+        else if (menu == 5) {
+            break;
+        }
+    }
+</script>

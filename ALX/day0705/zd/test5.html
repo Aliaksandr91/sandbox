@@ -1,0 +1,39 @@
+<script>
+    //     Ćwiczenie 66-5
+    // ❑ Utwórz dwie tablice 10-cio elementowe z losowymi wartościami 1-20.
+    // ❑ Każda z tablica posiada różne wartości.
+    // ❑ Napisz program, który wypisze największą wartość występującą jednocześnie w
+    // obu tablicach.
+
+    // tab1 = [2,5,8,4,15]
+    // tab2 = [6,3,2,8,12]
+    // Największa liczba występująca w obu tablicach to: 8
+
+    function getRnd() {
+        return Math.floor((Math.random() * 20) + 1)
+    }
+
+    let arr1 = [];
+    let arr2 = [];
+    if (arr1.length < 10) {
+        for (let i = 0; i < 10; i++) {
+            arr1.push(getRnd());
+            arr2.push(getRnd())
+        }
+    }
+    
+    if (arr1.length >= 10) {
+        let max = null;
+        console.log(arr1);
+        console.log(arr2);
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr1.length; j++) {
+                if (arr1[i] === arr2[j] && (arr1[i]) > max) {
+                    max = arr1[i]
+                }
+            }
+        }
+        console.log('max = ' + max);
+    }
+
+</script>

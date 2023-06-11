@@ -1,0 +1,126 @@
+<script>
+    //     Ćwiczenie 79_2
+    // ❑ Zaprojektuj prosty mechanizm dodawania studentów do tablicy
+    // w postaci obiektów.
+    // ❑ Zbierane informacje powinny dotyczyć:
+    // ❑ imie, nazwisko, oceny
+    // ❑ Zaprojektuj interaktywne menu:
+    // ❑ 1-dodaj studenta, 2-wypisz studentow, 3-usun studenta, 4-
+    // edytuj studenta, 5-dodaj ocene studentowi, 6-wypisz oceny
+    // studenta, 7-wypisz studentow wraz ze srednia, 8-koniec
+
+
+    class Student {
+
+        constructor(imie, nazwisko, oceny) {
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+            this.oceny = []
+        }
+    }
+
+    let listaStudentow = [];
+    while (true) {
+
+        let menu = Number(prompt("1-dodaj studenta, 2-wypisz studentow, 3-usun studenta, 4-edytuj studenta, 5-dodaj ocene studentowi, 6-wypisz oceny, studenta, 7-wypisz studentow wraz ze srednia, 8-koniec"));
+
+        if (menu == 1) {
+            let imie = prompt("Podaj Imie studenta: ");
+            let nazwisko = prompt("Podaj nazwisko studenta: ");
+            let student = new Student(imie, nazwisko);
+            listaStudentow.push(student);
+        }
+        else if (menu == 2) {
+
+            for (let item of listaStudentow) {
+                console.log(`${item.imie} ${item.nazwisko}`);
+            }
+        }
+        else if (menu == 3) {
+            let imie = prompt("Podaj Imie i Nazwisko studenta: ");
+
+            let flag = false;
+
+            for (let i = 0; i < listaStudentow.length; i++) {
+                if (`${listaStudentow[i].imie} ${listaStudentow[i].nazwisko}` == imie) {
+                    flag = true;
+                    listaStudentow.splice(i, 1);
+                    console.log('Student zostal usuniety')
+                    break
+                }
+            }
+            if (flag == false) {
+                console.log('Student nie zostal znaleziony')
+            }
+        }
+
+        else if (menu == 4) {
+            let imie = prompt("Podaj imie studenta: ");
+            let nazwisko = prompt("Podaj nazwisko studenta: ");
+            let flag = false;
+            for (item of listaStudentow) {
+                if (item.imie == imie && item.nazwisko == nazwisko) {
+                    flag = true;
+                    listaStudentow.imie = prompt('Podaj nowe imie studenta: ');
+                    listaStudentow.nazwisko = prompt('Podaj nowe nazwisko studenta: ');
+                    console.log('Studenta  zostal zmieniony')
+                    break
+                }
+            }
+            if (flag == false) {
+                console.log('Student nie zostal znaleziony')
+            }
+        }
+
+        else if (menu == 5) {
+            let imie = prompt("Podaj imie studenta: ");
+            let nazwisko = prompt("Podaj nazwisko studenta: ");
+            let flag = false;
+
+            for (item of listaStudentow) {
+                if (item.imie == imie && item.nazwisko == nazwisko) {
+                    flag = true;
+                    let ocena = prompt('Podaj ocene: ');
+                    item.oceny.push(ocena);
+                    console.log('Ocene dodano')
+                    break
+                }
+            }
+            if (flag == false) {
+                console.log('Student nie zostal znaleziony')
+            }
+        }
+
+        else if (menu == 6) {
+            let imie = prompt("Podaj imie studenta: ");
+            let nazwisko = prompt("Podaj nazwisko studenta: ");
+            let flag = false;
+
+            for (item of listaStudentow) {
+                if (item.imie == imie && item.nazwisko == nazwisko) {
+                    flag = true;
+                    console.log(item.oceny)
+                    break
+                }
+            }
+            if (flag == false) {
+                console.log('Student nie zostal znaleziony')
+            }
+        }
+        else if (menu == 7) {
+            for (let item of listaStudentow) {
+                let sum = 0;
+                if (item.oceny.length > 0) {
+                    for(let i = 0; i < item.oceny.length; i++) {
+                        sum = Number(item.oceny[i]) + sum 
+                    }
+                }
+                console.log(item.imie, item.nazwisko, sum/item.oceny.length)
+            }
+        }
+        else if (menu == 8) {
+            console.log("KONIEC !");
+            break;
+        }
+    }
+</script>

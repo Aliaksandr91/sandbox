@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz rezerwacji biletu lotniczego</title>
+</head>
+
+<body>
+    <h1>Formularz rezerwacji biletu lotniczego</h1>
+    <form method="get">
+        <p>
+            Twoje imię:
+            <p><input type="text" name="first-name" placeholder="Imię" autofocus required></p>
+        </p>
+        <p>
+            Twoje nazwisko:
+            <p><input type="text" name="last-name" placeholder="Nazwisko"></p>
+        </p>
+        <p>
+            Data wylotu:
+            <p><input type="date" name="date" placeholder="30.03.2023"></p>
+        </p>
+        <p>
+            Wylot z:
+            <div>
+                <select name="city1">
+                    <option value="1">Warszawa</option>
+                    <option value="3">Wrocław</option>
+                    <option value="3">Poznan</option>
+                </select>
+            </div>
+        </p>
+        <p>
+            Przylot z:
+            <div>
+                <select name="city2">
+                    <option value="1">Szczecin</option>
+                    <option value="2">Wrocław</option>
+                    <option value="3">Poznan</option>
+                </select>
+            </div>
+        </p>
+        <p>
+            Klasa VIP:
+            <div>
+                <input type="radio" name="class" value="yes" />Tak
+                <input type="radio" name="class" value="no" />Nie
+            </div>
+        </p>
+        <p>
+            Posiłek:
+            <div>
+                <input type="checkbox" name="danie1" value="przystawka" />przystawka
+                <input type="checkbox" name="danie2" value="obiad" />obiad
+                <input type="checkbox" name="danie3" value="deser" />deser
+            </div>
+
+        </p>
+        <p>
+            Dodakowe uwagi:
+            <p>
+                <textarea name="attention" placeholder="Opis"></textarea>
+            </p>
+        </p>
+        <button type="submit">Zarezerwuj</button>
+        <button type="reset">Anuluj</button>
+    </form>
+</body>
+
+</html>

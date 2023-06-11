@@ -1,0 +1,27 @@
+<script>
+    class Test {
+        constructor(parametr) {
+            this.poleTest = parametr;
+        }
+    }
+
+    class Pojazdy extends Test {
+        constructor(nazwa, kolor, cena, aaa) {
+            super(aaa)
+            this.nazwa = nazwa;
+            this.kolor = kolor;
+            this.cena = cena;
+        }
+    }
+
+    class Samolot extends Pojazdy {
+
+        constructor(nazwa, kolor, cena, pulap, aaa) {
+            super(nazwa, kolor, cena, aaa);
+            this.pulap = pulap;
+        }
+    }
+
+    let samolot = new Samolot("Beoing 757", "niebieski", 1111.99, 9999, "Testowanie");
+    console.log(samolot);
+</script>

@@ -1,0 +1,22 @@
+<script>
+    class Auto {
+        marka;
+        model;
+        cena;
+        kolor;
+        silnik;
+        constructor (marka, model, cena, kolor, silnik) {
+            this.marka = marka
+            this.model = model
+            this.cena = cena
+            this.kolor = kolor
+            this.silnik = silnik
+        }
+    }
+
+    let obj1 = new Auto('Audi', 'A', 10000, 'Czarny', 1.2);
+    let obj2 = new Auto('BMW', 'B', 13000, 'Czarny', 1.5);
+    let obj3 = new Auto('Citroen', 'C', 18000, 'Fioletowy', 1.8);
+
+    console.log(obj1, obj2, obj3)
+</script>

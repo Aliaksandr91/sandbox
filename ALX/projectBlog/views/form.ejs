@@ -1,0 +1,14 @@
+<%- include('naglowek') %>
+    <h2>Formularz dodawania nowego wpisu do bloga</h2>
+    <form action="/dodaj" method="post">
+        <p>
+            Tytył:
+            <input type="text" name="tytul">
+        </p>
+        <p>
+            Treść:
+            <textarea name="tresc" id="" cols="30" rows="10"></textarea>
+        </p>
+        <button type="submit">Zapisz</button>
+    </form>
+<%- include('stopka') %>

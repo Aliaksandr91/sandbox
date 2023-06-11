@@ -1,0 +1,19 @@
+<script>
+    class Zawodnik {
+        constructor(imie, wzrost, waga) {
+            this.imie = imie;
+            this.wzrost = wzrost;
+            this.waga = waga;
+        }
+        obliczBmi() {
+            let bmi = this.waga/(this.wzrost*this.wzrost)
+            console.log(this.imie, bmi)
+        }
+    }
+
+    let obj1 = new Zawodnik('Marek', 1.78, 75);
+    let obj2 = new Zawodnik('Pawel', 1.83, 72)
+
+    obj1.obliczBmi();
+    obj2.obliczBmi();
+</script>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>formularz rejestracyjny</title>
+</head>
+
+<body>
+    <form method="post">
+        <h2>Dane identyfikacyjne</h2>
+        <div class="border">
+            <p>
+                <span class="description">Firma:</span>
+                <input class="data" type="text">
+            </p>
+            <p>
+                <span class="description">Ulica:</span>
+                <input class="data" type="text">
+            </p>
+            <p>
+                <span class="description">Miejscowość:</span>
+                <input class="data" type="text">
+            </p>
+            <p>
+                <span class="description">Kod pocztowy: </span>
+                <input class="data" type="text">
+            </p>
+            <p>
+                <span class="description">NIP:</span>
+                <input class="data" type="text">
+            </p>
+            <p>
+                <span class="description">WWW:</span>
+                <input class="data" type="text">
+            </p>
+        </div>
+
+
+        <h2>Osoba kontaktowa</h2>
+        <div class="border">
+            <p>
+                <span class="description">Imię:</span>
+                <input class="data" type="text">
+            </p>
+            <p>
+                <span class="description">Nazwisko:</span>
+                <input class="data" type="text">
+            </p>
+            <p>
+                <span class="description">Telefon:</span>
+                <input class="data" type="text">
+            </p>
+            <p>
+                <span class="description">Kraj: </span>
+                <select class="data" name="country">
+                    <option value="">wybierz</option>
+                </select>
+            </p>
+            <p>
+                <span class="description">Faks:</span>
+                <input class="data" type="text">
+            </p>
+            <p>
+                <span class="description">Email:</span>
+                <input class="data" type="text">
+            </p>
+        </div>
+
+
+        <h2>Informacje dodatkowe</h2>
+        <div class="border">
+            <div>
+                <p class="info-block">Zakupy</p>
+                <div class="info-block">
+                    <p><input type="radio" name="product" value="detaliczne" />detaliczne</p>
+                    <p><input type="radio" name="product" value="hurtowe" />hurtowe</p>
+                </div>
+            </div>
+
+            <div>
+                <p class="info-block">Prowadzę</p>
+                <div class="info-block">
+                    <p><input type="checkbox" name="punkt1" value="hurtownie" />hurtownię</p>
+                    <p><input type="checkbox" name="punkt2" value="salon" />salon</p>
+                    <p><input type="checkbox" name="punkt3" value="sklep" />sklep</p>
+                    <p><input type="checkbox" name="punkt4" value="punkt-gsm" />punkt z akcesorami GSM</p>
+                    <p>
+                        <input type="checkbox" name="punkt5" value="inny" />inny
+                        <input type="text">
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h2>Moja glówna branża to</h2>
+        <div class="border">
+            <p><input type="radio" name="insutry" value="gsm" />GSM</p>
+            <p><input type="radio" name="insutry" value="rtv" />RTV</p>
+            <p><input type="radio" name="insutry" value="comp" />komputerowa</p>
+            <p>
+                <input type="radio" name="insutry" value="other" />inna
+                <input type="text">
+            </p>
+
+        </div>
+
+        <h2>Dane konfiguracyjne</h2>
+        <div class="border">
+            <p>
+                <span class="description">Login:</span>
+                <input class="data" type="text">
+            </p>
+            <p>
+                <span class="description">Hasło:</span>
+                <input class="data" type="text">
+            </p>
+            <p>
+                <span class="description">Powtórz hasło: </span>
+                <input class="data" type="text">
+            </p>
+            <p>
+                <input type="checkbox">
+                <span class="description">Wyrażam zgodę na przetwarzanie danych osobowych...:</span>
+            </p>
+            <p>Regulamin do pobrania jest <a href="">tutaj</a></p>
+            <button type="submit">Wyślij dane</button>
+            <button type="reset">Wyczyść dane</button>
+        </div>
+
+    </form>
+</body>
+
+</html>

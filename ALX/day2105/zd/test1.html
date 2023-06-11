@@ -1,0 +1,128 @@
+<script>
+    //     Ćwiczenie 35_1a
+    // ❑ Utwórz klasę Student:
+    // ❑ imie (prywatne)
+    // ❑ nazwisko (prywatne)
+    // ❑ numer indeks uczelni (prywatne)
+    // ❑ count (zmienna statyczna zliczająca liczbę studentów)
+    // ❑ Gettery i Settery
+    // ❑ Utwórz listę, w której będziesz przechowywać studentów.
+    // ❑ Zmienna statyczna w klasie Student, wraz z tworzeniem nowego obiektu tej klasy będzie
+    // zwiększana, a tym samym pozwoli śledzić ilość studentów na uczelni.
+    // ❑ Zaprojektuj menu: 1-Dodaj studeta, 2-Pokaż studentów, 3-Usuń studenta (po nr indeksu uczelni),
+    // 4-Zmień dane studentowi (po nr indeksu uczelni) w zakresie (nowe imie, nowe nazwisko).
+
+
+    class Student {
+        static count = 0;
+        #imie;
+        #nazwisko;
+        #numerIndeksu;
+        constructor(imie, nazwisko, numerIndeksu) {
+            this.#imie = imie;
+            this.#nazwisko = nazwisko;
+            this.#numerIndeksu = numerIndeksu;
+            Student.count++;
+        }
+        getCount() {
+            console.log(Student.count)
+        }
+        getStudent() {
+            if (listaStudentow.length > 0) {
+                console.log(`Imie: ${this.#imie}, Nazwisko: ${this.#nazwisko}, Uczelnia: ${this.#numerIndeksu}`)
+            } else {
+                console.log('Nie znaleziono studentów')
+            }
+        }
+
+        removeStudent(numer) {
+            let imie = prompt("Podaj imię studenta:");
+            let nazwisko = prompt("Podaj nazwisko studenta:");
+            if (numer == this.#numerIndeksu) {
+                let flag = false;
+                for (let i = 0; i < listaStudentow.length; i++) {
+                    if (listaStudentow[i].#nazwisko == nazwisko && listaStudentow[i].#imie == imie) {
+                        flag = true;
+                        listaStudentow.splice(i, 1);
+                        console.log('Student zostal usuniety')
+                        Student.count--;
+                        break
+                    }
+                }
+                if (flag == false) {
+                    console.log('Uczelnia lub student nie zostaly znaleziony')
+                }
+            }
+        }
+        renameStudent(numer) {
+            let imie = prompt("Podaj imię studenta:");
+            let nazwisko = prompt("Podaj nazwisko studenta:");
+            if (numer == this.#numerIndeksu) {
+                let flag = false;
+
+
+                for (let i = 0; i < listaStudentow.length; i++) {
+                    if (listaStudentow[i].#nazwisko == nazwisko && listaStudentow[i].#imie == imie) {
+                        flag = true;
+                        let nowewImie = prompt("Podaj nowe imię studenta:");
+                        let noweNazwisko = prompt("Podaj nowe nazwisko studenta:");
+                        listaStudentow[i].#nazwisko = noweNazwisko;
+                        listaStudentow[i].#imie = nowewImie;
+                        console.log('Student zostal zmieniony');
+                        break
+                    }
+                }
+                if (flag == false) {
+                    console.log('Uczelnia lub student nie zostaly znaleziony')
+                }
+            }
+
+        }
+
+    }
+
+    let listaStudentow = [];
+
+    while (true) {
+
+        let menu = Number(prompt("1-Dodaj studeta, 2-Pokaż studentów, 3-Usuń studenta (po nr indeksu uczelni), 4-Zmień dane studentowi (po nr indeksu uczelni), 5-koniec"))
+
+        if (menu == 1) {
+            let imie = prompt("Podaj imię studenta:");
+            let nazwisko = prompt("Podaj nazwisko studenta:");
+            let numerIndeksu = prompt("Podaj numer indeksu uczelni:");
+            let student = new Student(imie, nazwisko, numerIndeksu);
+            listaStudentow.push(student);
+            console.log("Student został dodany.");
+        }
+
+        else if (menu == 2) {
+            for (let student of listaStudentow) {
+                student.getStudent()
+            }
+        }
+
+        else if (menu == 3) {
+            let numerIndeksu = prompt("Podaj numer indeksu uczelni: ")
+            for (let student of listaStudentow) {
+                student.removeStudent(numerIndeksu);
+                break
+            }
+
+        }
+        else if (menu == 4) {
+            let numerIndeksu = prompt("Podaj numer indeksu uczelni: ")
+            for (let student of listaStudentow) {
+                student.renameStudent(numerIndeksu);
+                break
+            }
+        }
+        else if (menu == 5) {
+            break;
+        }
+        else {
+            console.log("Nierozpoznana opcja menu");
+        }
+    }
+
+</script>
