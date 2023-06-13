@@ -1,7 +1,7 @@
 function between(a, b) {
-    let arr = [];
+    let res = [];
     for (let i = a; i <= b; i++) {
-        arr.push(i)
+        res.push(i)
     }
-    return arr
+    return res
 }
