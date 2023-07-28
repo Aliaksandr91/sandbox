@@ -1,0 +1,11 @@
+function squareSum(numbers){
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum+=numbers[i] ** 2
+    }
+    return sum
+}
+
+console.log(squareSum([1,2]))
+console.log(squareSum([1,2,3,5]))
+console.log(squareSum([]))
