@@ -1,3 +1,4 @@
+
 function cubeChecker(volume, side){
     return volume > 0 && side > 0 && (Math.pow(side, 3) === volume);
 
