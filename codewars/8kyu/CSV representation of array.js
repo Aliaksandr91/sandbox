@@ -1,5 +1,5 @@
 function toCsvText(array) {
-    return array.map(row => row.join(',')).join('\\n');
+    return array.join('\n');
 }
 console.log(toCsvText([
     [ 0, 1, 2, 3, 45 ],
