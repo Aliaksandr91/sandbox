@@ -1,13 +1,14 @@
 function fraction(a, b) {
     let gcd = 1;
-    for(let i = 1; i <= a; ++i){
-        if(a % i === 0 && b % i === 0){
+    for (let i = 1; i <= a; ++i) {
+        if (a % i === 0 && b % i === 0) {
             gcd = i
         }
     }
-    return a/ gcd + b/gcd
+    return a / gcd + b / gcd
 
 }
+
 console.log(fraction(90, 120)) // 7
 
 console.log(fraction(2, 4)) // 3
