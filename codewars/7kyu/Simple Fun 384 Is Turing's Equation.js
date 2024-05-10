@@ -5,7 +5,6 @@ function isTuringEquation(s) {
         res.push(arr[i].split('').reverse().join(''))
     }
     return Number(res[0]) + Number(res[1]) === Number(res[2])
-
 }
 
 console.log(isTuringEquation("73+42=16"))//true
