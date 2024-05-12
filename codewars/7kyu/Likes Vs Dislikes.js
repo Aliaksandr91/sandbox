@@ -1,6 +1,5 @@
 function likeOrDislike(buttons) {
     let state = "Nothing";
-
     for (const button of buttons) {
         if (button === "Like" && state === "Dislike") {
             state = "Like";
@@ -12,7 +11,6 @@ function likeOrDislike(buttons) {
             state = button;
         }
     }
-
     return state;
 }
 
