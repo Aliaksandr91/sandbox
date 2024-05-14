@@ -1,19 +1,4 @@
 function checkExam(array1, array2) {
-    let res = 0
-    for (let i = 0; i < array1.length; i++) {
-        if (array1[i] === "") {
-            res += 0;
-        }
-        else if (array1[i] === array2[i]) {
-            res = res + 4
-        } else if (array1[i] !== array2[i]) {
-            res = -1
-        }
-    }
-    return res
-}
-
-function checkExam(array1, array2) {
     let score = 0;
     for (let i = 0; i < array1.length; i++) {
         if (array2[i] === "") {
