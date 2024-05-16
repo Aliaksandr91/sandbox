@@ -1,7 +1,5 @@
 function convertHashToArray(hash){
     return Object.keys(hash).map((key) => [key, hash[key]]);
-
-
 }
 console.log(convertHashToArray({name: "Jeremy"})) //[["name", "Jeremy"]]
 console.log(convertHashToArray({name: "Jeremy", age: 24}).sort()) //[["age", 24], ["name", "Jeremy"]]
