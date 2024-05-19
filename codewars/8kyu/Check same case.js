@@ -1,11 +1,10 @@
-function sameCase(a, b){
-    const lowLetters = 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z'
-    const upLetters = lowLetters.toUpperCase()
-    if (lowLetters.includes(a) && lowLetters.includes(b)) return 1
-    if (upLetters.includes(a) && upLetters.includes(b)) return 1
-    if (lowLetters.includes(a) && upLetters.includes(b)) return 0
-    if (lowLetters.includes(b) && upLetters.includes(a)) return 0
-    return -1
+function sameCase(a, b) {
+    const isLetter = char => (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z');
+    if (!isLetter(a) || !isLetter(b)) return -1;
+    if ((a >= 'a' && a <= 'z' && b >= 'a' && b <= 'z') || (a >= 'A' && a <= 'Z' && b >= 'A' && b <= 'Z')) {
+        return 1;
+    }
+    return 0;
 }
 console.log(sameCase('C', 'B')) // 1
 console.log(sameCase('b', 'a')) // 1
