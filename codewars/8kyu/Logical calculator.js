@@ -1,6 +1,5 @@
 function logicalCalc(array, op){
     let result = array[0];
-
     for (let i = 1; i < array.length; i++) {
         switch (op) {
             case 'AND':
@@ -14,7 +13,6 @@ function logicalCalc(array, op){
                 break;
         }
     }
-
     return result;
 }
 
