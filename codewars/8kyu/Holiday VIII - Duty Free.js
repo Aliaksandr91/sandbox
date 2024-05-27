@@ -1,6 +1,6 @@
 function dutyFree(normPrice, discount, hol) {
-    let priceBottle = normPrice - (normPrice * discount / 100)
-    let diff = normPrice - priceBottle
+    let discountPriceBottle = normPrice - (normPrice * discount / 100)
+    let diff = normPrice - discountPriceBottle
     return Math.floor(hol/diff)
 }
 
